@@ -1,5 +1,5 @@
 .list {
     display: flex;
     gap: 1.5rem;
-    font-size: 24;
+    font-size: var(--icon-size, 24px);
 }
