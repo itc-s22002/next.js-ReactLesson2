@@ -1,6 +1,7 @@
 import Container from 'components/container'
 import Hero from 'components/hero'
 import PostBody from 'components/post-body'
+import Contact from 'components/contact'
 
 const Home = () => {
   return (
@@ -26,6 +27,7 @@ const Home = () => {
 
         </p>
       </PostBody>
+      <Contact />
     </Container>
   )
 }
