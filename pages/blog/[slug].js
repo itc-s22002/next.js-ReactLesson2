@@ -1,4 +1,4 @@
-import { getPostBySlug } from 'lib/api'
+import { getPostBySlug, getAllSlugs } from 'lib/api'
 import { extractText } from 'lib/extract-text'
 import Meta from 'components/meta'
 import Container from 'components/container'
@@ -58,8 +58,9 @@ const Schedule = ({ title, publish, content, eyecatch, categories, description }
 export default Schedule
 
 export async function getStaticPaths () {
+  const allSlugs = await getAllSlugs()
   return {
-    paths: ['/blog/schedule', '/blog/misic', '/blog/micro'],
+    paths: allSlugs.map(({ slug }) => `/blog/${slug}`),
     fallback: false
   }
 }
